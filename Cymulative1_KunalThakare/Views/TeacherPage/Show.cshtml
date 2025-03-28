@@ -1,0 +1,21 @@
+﻿@model Teacher
+
+<h1>Enter Teacher ID to check details</h1>
+<form method="get" asp-action="Show">
+    <div class="form-group">
+        <label for="teacherId">Enter Teacher ID:</label>
+        <input type="number" class="form-control" id="teacherId" name="id" placeholder="Enter Teacher ID" required />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Search</button>
+</form>
+
+@if (Model != null)
+{
+    <h2>Teacher Details</h2>
+    <p><strong>ID:</strong> @Model.TeacherId</p>
+    <p><strong>First Name:</strong> @Model.TeacherFName</p>
+    <p><strong>Last Name:</strong> @Model.TeacherLName</p>
+    <p><strong>Employee Number:</strong> @Model.EmployeeNumber</p>
+    <p><strong>Hire Date:</strong> @Model.HireDate.ToShortDateString()</p>
+    <p><strong>Salary:</strong> $@Model.Salary</p>
+}
